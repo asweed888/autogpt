@@ -1,0 +1,3 @@
+.env
+compose.d/gitignored*.yml
+volumes
