@@ -18,7 +18,12 @@
 git clone git@github.com:asweed888/autogpt.git
 ```
 
-### 3. .envを作成する
+### 3. OpenAIのAPIキーを作成する
+
+[こちら](https://platform.openai.com/account/api-keys)へアクセスしOpenAIのAPIキーを取得してください
+
+
+### 4. .envを作成する
 まず.env.templateというファイルをコピーし、.envというファイルを作成してください。  
 `.`で始まるファイルは不可視ファイルなので表示されていない場合があります。  
 .env.templateファイルが見つからない場合、不可視ファイルを可視設定にしてください。  
@@ -27,4 +32,11 @@ git clone git@github.com:asweed888/autogpt.git
 
 ```
 OPENAI_API_KEY=your-openai-api-key
+```
+
+### 5. AutoGPTを起動する
+下記のコマンドを実行することでAutoGPTを起動することができます。
+
+```
+docker-compose run --rm auto-gpt --gpt3only
 ```
