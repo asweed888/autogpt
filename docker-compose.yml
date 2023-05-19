@@ -2,7 +2,6 @@ version: "3"
 services:
   auto-gpt:
     image: significantgravitas/auto-gpt:v0.3.1
-    # build: ../
     depends_on:
       - redis
     env_file:
@@ -12,10 +11,11 @@ services:
       REDIS_HOST: ${REDIS_HOST:-redis}
     profiles: ["exclude-from-up"]
     volumes:
-      - ./volumes/auto_gpt_workspace:/app/autogpt/auto_gpt_workspace
-      - ./volumes/data:/app/data
+      - ./web_selenium.py:/app/autogpt/commands/web_selenium.py
+      - ./auto_gpt_workspace:/app/autogpt/auto_gpt_workspace
+      - ./data:/app/data
       ## allow auto-gpt to write logs to disk
-      - ./volumes/logs:/app/logs
+      - ./logs:/app/logs
       ## uncomment following lines if you have / want to make use of these files
       #- ./azure.yaml:/app/azure.yaml
       #- ./ai_settings.yaml:/app/ai_settings.yaml
