@@ -2,3 +2,6 @@
 compose.d/gitignored*.yml
 volumes
 query.txt
+auto_gpt_workspace
+data
+logs
